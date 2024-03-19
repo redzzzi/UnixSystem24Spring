@@ -1,0 +1,1 @@
+- Today I learned all over the uses and applications of `cp` and `mv` commands.
