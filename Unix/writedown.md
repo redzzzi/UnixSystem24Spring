@@ -12,4 +12,8 @@
 Everything is a file.
 ```
 - Many programs produce **output** of some kind.
-    - `**stdout**`: their **results** to a special file
+    - `stdout`: their **results** to a special file
+        - *standard output*
+    - `stderr`: their **status msg** to another file
+        - *standard error*
+- Many programs take **input** from a facility called `stdin`. 
