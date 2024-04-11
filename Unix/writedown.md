@@ -28,7 +28,7 @@ Everything is a file.
 ```
 
 ## [redirection](https://ko.wikipedia.org/wiki/%EB%A6%AC%EB%8B%A4%EC%9D%B4%EB%A0%89%EC%85%98)
-### 표준 출력의 리디렉션 - to redirect standard output to another file
+### **표준 출력**의 리디렉션 - to redirect standard output to another file
 - ```명령어1```을 실행하여 나오는 출력물을 `파일1`로 내보낸다.
     - **기존에 파일1이 존재하는 경우** <ins>기존의 파일 내용은 지우고 새롭게 추가</ins>된다.
     - 키보드 이용과는 별개이다.
@@ -44,7 +44,8 @@ Everything is a file.
 ```
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/abebc08f-939a-421c-a22c-fd9b595ec5a2)
 
-### 표준 입력의 리디렉션
+### **표준 입력**의 리디렉션
+- <ins>키보드에서 파일</ins>이라는 표준 입력의 소스를 바꿀 수 있다.
 - ```명령어1```을 실행하되, `파일1`이 입력의 대상이 된다.
     - 키보드 이용과는 별개이다.
 ```shell
@@ -75,4 +76,12 @@ Everything is a file.
 - `명령어` 실행 시, 표준 출력과 표준 에러를 모두 `파일`에 쓴다. 
 ```shell
 [명령어] 1 > [파일] 2 > [파일]
+```
+
+# Disposing of **Unwanted Output**
+- 명령어 출력물을 버리고 싶다면 아래 예제처럼 실행하면 된다.
+- 바로 output을 `/dev/null`이라고 부르는 **special file**에 리디렉팅한다.
+    - 입력은 받지만 아무것도 하지 않는다.
+```shell
+$ ls -l /bin/usr 2 > /dev/null
 ```
