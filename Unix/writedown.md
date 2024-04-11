@@ -87,3 +87,17 @@ Everything is a file.
 ```shell
 $ ls -l /bin/usr 2 > /dev/null
 ```
+
+# Using Filters with Pipes (**pipelines**)
+- 수직선 `|`을 pipe operator로 사용한다.
+- 한 명령어의 **표준 출력**은 다른 **표준 입력**과 pipe될 수 있다. 
+    - 특정 프로그램이 <ins>명시적인 중간 파일이 없더라도</ins>, <ins>다른 프로그램의</ins> 출력을 <ins>읽게 하여</ins> 프로그램을 실행할 수 있다.
+- `command1`을 실행하되, `command2`에 대한 입력으로서 출력을 사용한다.
+```shell
+$ command1 | command2
+```
+- 예제: `echo`를 다른 명령어와 결합하여 비상호적인 셸에서 **상호적인 일**을 수행하도록 한다.
+    - `\n`은 리턴을 의미하며, 입력 `user`를 받아 `ftp` 클라이언트를 실행하고, **Enter** 키를 누르면 `pass`를 입력한다.
+```shell
+echo -e "user\npass" | ftp localhost
+```
