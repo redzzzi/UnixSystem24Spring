@@ -51,6 +51,8 @@ Everything is a file.
 ```shell
 [명령어1] < [파일1]
 ```
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/b528ef65-0876-468f-98de-47b2ee9651a7)
+
 ### 혼합
 - `명령어`은 `들어오는파일`에서 내용을 불러들인 뒤 `나가는파일`에 기록한다.
 ```shell
