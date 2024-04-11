@@ -138,3 +138,4 @@ ps -ef | sort -k 2 | head -5
 
 ### `tail`
 - Output the <ins>last part of a file</ins>
+![Uploading image.png…]()
