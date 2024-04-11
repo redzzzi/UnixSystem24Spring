@@ -101,3 +101,13 @@ $ command1 | command2
 ```shell
 echo -e "user\npass" | ftp localhost
 ```
+## Examples
+```shell
+ps -ef | more
+```
+```shell
+ps -ef | sort -k 2
+```
+```shell
+ps -ef | sort -k 2 | head -5
+```
