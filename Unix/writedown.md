@@ -142,5 +142,5 @@ ps -ef | sort -k 2 | head -5
 - `+N`: Skip **N-1** lines
 - `-N`: N lines from end
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/a7ca0afa-bbd7-4568-b2a3-1943d1d05d65)
-
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/a761d293-ac53-47c5-bd9d-cd0caad5718b)
 
