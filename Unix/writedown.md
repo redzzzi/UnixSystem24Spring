@@ -134,7 +134,7 @@ ps -ef | sort -k 2 | head -5
 
 ### `head`
 - Output the <ins>first part of a file</ins>
-
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/aa59f257-3152-465a-8349-9f25bf3f0fed)
 
 ### `tail`
 - Output the <ins>last part of a file</ins>
