@@ -129,3 +129,4 @@ ps -ef | sort -k 2 | head -5
 
 ### `wc`
 - *line*, *word*, *byte*를 세어서 출력한다.
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/1e045cc1-bc58-4215-83f7-f5dd57bfd5b2)
