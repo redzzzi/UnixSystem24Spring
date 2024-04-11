@@ -144,3 +144,26 @@ ps -ef | sort -k 2 | head -5
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/a7ca0afa-bbd7-4568-b2a3-1943d1d05d65)
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/a761d293-ac53-47c5-bd9d-cd0caad5718b)
 
+### **`grep`**
+- print lines <ins><b>Matching a Pattern</b></ins>
+- `grep` `<pattern>` `[file...]`
+```plaintext
+파일 내에서 텍스트 패턴을 찾을 때 아주 유용한 명령어이다.
+파일에서 패턴을 찾게 되면, 그 패턴을 포함한 명령줄을 출력한다.
+```
+
+### `cut`
+- **cut sections** from each line of files
+- options
+    - `-c`(character_list): 지정한 부분만 뽑아 출력한다.
+    - `-f`(field_list): 지정된 대로 명령줄에서 하나 이상의 필드를 뽑아 출력한다. 
+    - `-d`(delimeter): `-f`가 명시되었을 때, 해당 옵션으로 character에 범위를 정한다.
+        - Default: `TAB`
+
+### `sort`
+
+### `cmp`
+
+### `diff`
+
+### `find`
