@@ -134,9 +134,13 @@ ps -ef | sort -k 2 | head -5
 
 ### `head`
 - Output the <ins>first part of a file</ins>
+- `-n`: number of lines
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/aa59f257-3152-465a-8349-9f25bf3f0fed)
 
 ### `tail`
 - Output the <ins>last part of a file</ins>
+- `+N`: Skip **N-1** lines
+- `-N`: N lines from end
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/a7ca0afa-bbd7-4568-b2a3-1943d1d05d65)
+
 
