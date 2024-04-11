@@ -114,3 +114,14 @@ ps -ef | sort -k 2
 ```shell
 ps -ef | sort -k 2 | head -5
 ```
+
+# Filters
+- **Filter**는 입력값을 조작하여 결과를 표준 출력 스트림으로 보낸다.
+    - 파이프라인은 데이터에 대한 복잡한 연산을 실행할 때 자주 쓰인다.
+    - 이런 상황에서 *filter*가 빈번하게 언급된다.
+## Common **filter** commands
+`more`, `cat`, `cmp`, `cut`, `diff`, `head`, `tail`, `paste`, `sort`, `tr`, 
+`uniq`, `wc`, `grep`, `sed`, `awk`, etc.
+
+### `uniq`
+- 반복되는 명령줄을 알려주거나 생략한다.
