@@ -35,11 +35,15 @@ Everything is a file.
 ```shell
 명령어1 > 파일1
 ```
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/36469bb0-33a5-45cf-b3c8-6ff5ef6c9cf4)
+
 - 파일 끝에 출력물을 추가한다.
     - Using the `>>` operator will result in the output being appended to the file.
 ```shell
 명령어1 >> 파일1
 ```
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/abebc08f-939a-421c-a22c-fd9b595ec5a2)
+
 ### 표준 입력의 리디렉션
 - ```명령어1```을 실행하되, `파일1`이 입력의 대상이 된다.
     - 키보드 이용과는 별개이다.
