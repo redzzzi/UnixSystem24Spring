@@ -125,22 +125,26 @@ ps -ef | sort -k 2 | head -5
 
 ### `uniq`
 - 반복되는 명령줄을 알려주거나 생략한다.
+
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/55d812d2-4d71-47a0-a92c-357e5d84a985)
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/6620eabc-b571-4727-b4e2-e0addf4399b4)
 
 ### `wc`
 - *line*, *word*, *byte*를 세어서 출력한다.
+
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/1e045cc1-bc58-4215-83f7-f5dd57bfd5b2)
 
 ### `head`
 - Output the <ins>first part of a file</ins>
 - `-n`: number of lines
+
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/aa59f257-3152-465a-8349-9f25bf3f0fed)
 
 ### `tail`
 - Output the <ins>last part of a file</ins>
 - `+N`: Skip **N-1** lines
 - `-N`: N lines from end
+
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/a7ca0afa-bbd7-4568-b2a3-1943d1d05d65)
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/a761d293-ac53-47c5-bd9d-cd0caad5718b)
 
@@ -151,7 +155,7 @@ ps -ef | sort -k 2 | head -5
 파일 내에서 텍스트 패턴을 찾을 때 아주 유용한 명령어이다.
 파일에서 패턴을 찾게 되면, 그 패턴을 포함한 명령줄을 출력한다.
 ```
-
+![grep](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/1795c723-043d-45b1-896d-f77f47ec5d2c)
 ### `cut`
 - **cut sections** from each line of files
 - options
@@ -160,6 +164,8 @@ ps -ef | sort -k 2 | head -5
     - `-d`(delimeter): `-f`가 명시되었을 때, 해당 옵션으로 character에 범위를 정한다.
         - Default: `TAB`
 
+![cut1](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/4f536ad7-e85f-47b6-981d-d8acf967b778)
+![cut2](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/2d3ec3aa-ac96-4694-9067-789eec8bf7bf)
 ### `sort`
 - sort lines of text
 - options
@@ -168,6 +174,8 @@ ps -ef | sort -k 2 | head -5
     - `-n`: 문자열의 숫자를 기반으로 정렬한다.
     - `-r`: 역순으로 정렬한다.
     - `-t`: field를 분리하는 character를 정의한다.
+
+![sort](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/8c7e7a9d-8876-4851-80b0-663a7ee68cb5)
 ### 명령줄의 Fields
 - 데이터 순서가 시작부에 없을 때, **field sort**가 필요하다.
 - UNIX의 **sort**는 공백 또는 탭으로 구분된 character 집합을 필드로 정의한다.
