@@ -163,7 +163,14 @@ ps -ef | sort -k 2 | head -5
 ### `sort`
 - sort lines of text
 - options
-    - `-b`: 
+    - `-b`: 앞에 있는 공백을 무시하고 정렬한다.
+    - `-k`: key field를 기반으로 정렬한다.
+    - `-n`: 문자열의 숫자를 기반으로 정렬한다.
+    - `-r`: 역순으로 정렬한다.
+    - `-t`: field를 분리하는 character를 정의한다.
+### 명령줄의 Fields
+- 데이터 순서가 시작부에 없을 때, **field sort**가 필요하다.
+- UNIX의 **sort**는 공백 또는 탭으로 구분된 character 집합을 필드로 정의한다.
 
 ### `cmp`
 - 두 파일을 **바이트단위**로 **비교**하여 <ins>해당 파일들이 동일 파일인지 아닌지</ins>를 판단한다.
@@ -174,7 +181,17 @@ ps -ef | sort -k 2 | head -5
 - 파일 간 차이점을 탐지한다.
 - 많은 출력 포맷을 지원하고, 큰 파일을 한 번에 처리하는 능력을 가진 복잡한 도구이다.
 - `diff` `<option>` `files or directories`
+- *diff Change Commands*
+    - r1`a`r2: **Append**, r1`c`r2: **Change(Replace)**, r1`d`r2: **Delete** 
 
 ### `find`
 - 디렉토리 계층에서 파일을 찾는다.
 - `find` `pathname` `criteria`
+- special symbol: `{}`
+- Examples
+```shell
+find . -name '*.c' -print
+```
+```shell
+find . -mtime -14 -ls
+```
