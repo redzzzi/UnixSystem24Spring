@@ -125,3 +125,4 @@ ps -ef | sort -k 2 | head -5
 
 ### `uniq`
 - 반복되는 명령줄을 알려주거나 생략한다.
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/6620eabc-b571-4727-b4e2-e0addf4399b4)
