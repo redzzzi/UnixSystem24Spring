@@ -161,9 +161,20 @@ ps -ef | sort -k 2 | head -5
         - Default: `TAB`
 
 ### `sort`
+- sort lines of text
+- options
+    - `-b`: 
 
 ### `cmp`
+- 두 파일을 **바이트단위**로 **비교**하여 <ins>해당 파일들이 동일 파일인지 아닌지</ins>를 판단한다.
+- `cmp` `<option>` `file1` `file2`
+    - `-l`: list, `-s`: suppress list
 
 ### `diff`
+- 파일 간 차이점을 탐지한다.
+- 많은 출력 포맷을 지원하고, 큰 파일을 한 번에 처리하는 능력을 가진 복잡한 도구이다.
+- `diff` `<option>` `files or directories`
 
 ### `find`
+- 디렉토리 계층에서 파일을 찾는다.
+- `find` `pathname` `criteria`
