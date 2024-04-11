@@ -102,6 +102,9 @@ $ command1 | command2
 echo -e "user\npass" | ftp localhost
 ```
 ## Examples
+- [ps 명령어 옵션](https://blog.naver.com/tmk0429/222318530824)
+    - `-e`: 커널 프로세스를 제외한 모든 프로세스를 출력
+    - `-f`: 출력을 풀 포맷으로 표기 (UID, PID, PPID 등이 함께 표시)
 ```shell
 ps -ef | more
 ```
