@@ -40,7 +40,7 @@ int main() {
   return 0;
 }
 ```
-<details><sumamry>with `-O1` option</sumamry>
+<details><summary>with `-O1` option</summary>
 <div markdown="1">
 
 ```shell
@@ -67,7 +67,7 @@ pcount_for:
 ```
 </div>
 </details>
-<details><sumamry>with `-Og` option</sumamry>
+<details><summary>with `-Og` option</summary>
 <div markdown="1">
 
 ```shell
