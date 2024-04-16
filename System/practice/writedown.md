@@ -1,9 +1,9 @@
 # Loop
 
 # General `While` Translation
-## `Jump-to-middle` translation
+## 1. `Jump-to-middle` translation
 - `-Og` 옵션으로 컴파일할 때 쓰인다.
-## `Do-while` conversion
+## 2. `Do-while` conversion
 - `-O1` 옵션으로 컴파일할 때 쓰인다.
 ## For-While Conversion
 - For Version
