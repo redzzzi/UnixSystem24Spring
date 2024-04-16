@@ -1,9 +1,8 @@
-# Loop
-
+# Loops
 # General `While` Translation
-## 1. `Jump-to-middle` translation
+### 1. `Jump-to-middle` translation
 - `-Og` 옵션으로 컴파일할 때 쓰인다.
-## 2. `Do-while` conversion
+### 2. `Do-while` conversion
 - `-O1` 옵션으로 컴파일할 때 쓰인다.
 ## For-While Conversion
 - For Version
@@ -41,7 +40,9 @@ int main() {
   return 0;
 }
 ```
-- with `-O1` option
+<details><summary>with `-O1` option</summary>
+<div markdown="1">
+
 ```shell
 gcc -O1 -S loop.c
 ```
@@ -64,7 +65,11 @@ pcount_for:
         ret
         .cfi_endproc
 ```
-- with `-Og` option
+</div>
+</details>
+<details><summary>with `-Og` option</summary>
+<div markdown="1">
+
 ```shell
 gcc -Og -S loop.c
 ```
@@ -89,3 +94,8 @@ pcount_for:
         ret
         .cfi_endproc
 ```
+</div>
+</details>
+
+# Switch Statements
+
