@@ -194,12 +194,33 @@ ps -ef | sort -k 2 | head -5
 
 ### `find`
 - 디렉토리 계층에서 파일을 찾는다.
-- `find` `pathname` `criteria`
-- special symbol: `{}`
+- format
+    - $ `find` `pathname` `criteria`
+    - $ `find` `startingDir` `searchOptions` `commandToPerform`
 - Examples
 ```shell
 find . -name '*.c' -print
 ```
 ```shell
+// 14일 이내에 수정된 파일들을 보여준다
 find . -mtime -14 -ls
+```
+### Where actions: **find 명령어를 수행한 후,** 해당 파일에 대해 동작을 수행하도록 지정한다.
+- special symbol: `{}`
+    - 명령어로 찾은 파일의 **경로**를 포함하고자 할 때, 해당 심볼을 사용한다.
+- 명령어는 무조건 `;`로 끝나야 한다.
+    - find 명령어에서 **동작을 수행**시키고자 할 때 <i><ins>명령어가 끝났다는 의미</ins></i>로 쓰인다.
+    - shell은 `;`을 낯설게 받아들이기 때문에, **인자로 넘기기 위한 목적**으로 `\` 또는 **따옴표**를 함께 사용한다. 
+- `-exec` 옵션으로 명령어를 실행한다.
+- `-ok` 옵션은 위 실행 옵션의 상호작용 버전이다.
+- 예시
+```shell
+// 크기가 0인 파일을 찾아 해당 경로의 파일을 삭제한다.
+// 하지만 '-i' 옵션이 있기 때문에 메시지를 띄워 확인 절차를 거친다.
+find / -size 0 -exec rm -i {} \;
+```
+```shell
+// .swp으로 끝나는 파일을 찾아 /tmp 경로로 옮긴다.
+// 옮기기 전에 메시지를 띄워 확인 절차를 거친다.
+find / -name ’*.swp’ –ok mv {} /tmp ’;’
 ```
