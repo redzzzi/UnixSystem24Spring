@@ -59,3 +59,12 @@
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/78ff6e70-4823-4520-8291-4f6779e1da97)
 
 </details>
+
+# Compile a C program
+## Method 1
+- `a.out`<sub><i>(파일 이름 기본값)</i></sub>을 생성한다.
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/ca4c8b4d-0dd1-4b1a-9d4a-9ac8221dbdd1)
+## Method 2
+- `.c` 파일을 `.o` 파일로 컴파일한다.
+- 링크 오브젝트 파일을 실행가능한 상태로 만든다.
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/cd713d0c-c9e8-4abd-a565-503ae4e4d8c9)
