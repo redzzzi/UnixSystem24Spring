@@ -147,4 +147,11 @@ gcc -DVALUE=2024 example.c
 - 다음과 같이 쓸 수도 있다.
 ![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/f946e712-837b-4863-9709-2b19b61591f4)
 
-- 
+# Create a static library
+## static library
+- **여러 개**의 오브젝트 파일을 `.a` 확장자를 가진 **하나**의 파일로 만들어낸 것을 의미한다.
+- static file은 archiver(`ar`)을 가지고 만들어진다.
+## `ar`
+- *라이브러리 아카이브*를 뜻한다.
+- 객체 모듈을 라이브러리 상태로 유지하고, 필요할 때 사용한다.
+- format: `ar` `[option]` `archive` `[member-file]`
