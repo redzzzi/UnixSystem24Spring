@@ -130,7 +130,12 @@ gcc -DVALUE=2024 example.c
     - `grep`은 키워드를 강조해준다.
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/74b8467a-c6d6-4eeb-b55b-d55aad0a3e4d)
 
-# Add libraries
+# Add libraries<sup>math 헤더파일을 활용한 예시</sup>
+- `-l`은 라이브러리의 이름을 지정해주는 역할을 한다.
+    - `stdio.h`와 같은 헤더파일은 표준 헤더파일이기 때문에 링크를 위한 옵션을 따로 안 붙여도 된다.
+    - 그러나, `math.h`의 경우 **함수의 정의가 라이브러리에 구현되어있기 때문에** 명시적으로 해당 라이브러리를 링크해주어야 한다.
+![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/570cf150-a981-4ec9-b9ec-7e4b78b1ee56)
+
 - `-L`은 라이브러를 검색할 경로를 지정하도록 한다.
-- `-l`은 라이브러리의 이름을 특정시키는 역할을 한다.
+
 - 
