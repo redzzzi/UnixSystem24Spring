@@ -88,3 +88,5 @@
 ```cpp
 gcc -static file.c
 ```
+
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/c633211d-9a91-40cc-9d16-9b70b9b58f05)
