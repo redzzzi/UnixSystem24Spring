@@ -137,5 +137,14 @@ gcc -DVALUE=2024 example.c
 ![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/570cf150-a981-4ec9-b9ec-7e4b78b1ee56)
 
 - `-L`은 라이브러를 검색할 경로를 지정하도록 한다.
+    - `/usr/lib` 경로에 있는 라이브러리를 현재 위치로 복사해온다.
+    - `-L` 옵션으로 현재 위치(`.`)에 있는 라이브러리를 찾는다.
+    - `-l` 옵션으로 `mym`이라는 이름을 가진 라이브러리를 특정한다.
+        - 보통 라이브러리 이름은 `lib`으로 시작하는 게 국룰이기 때문에, lib를 제외한 이름으로 찾는다.
+        - `-static` 옵션으로 해당 라이브러리를 정적으로 바인딩한다.
+![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/0aec6346-385d-4011-9d47-d7de0d8247f8)
+
+- 다음과 같이 쓸 수도 있다.
+![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/f946e712-837b-4863-9709-2b19b61591f4)
 
 - 
