@@ -70,3 +70,21 @@
 - 링크 오브젝트 파일을 실행가능한 상태로 만든다.
 
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/cd713d0c-c9e8-4abd-a565-503ae4e4d8c9)
+
+# Libraries
+## Static libraries
+- 프로그램이 실행되기 **이전 또는 그때** executable한 프로그램에 포함된다.
+- `.a` 확장자를 가진다.
+## Shared libraries
+- 프로그램 시작 시 로드되며, 다양한 프로그램과 공유될 수 있다.
+- 보통 리눅스에서 `.so` 확장자를 가진다.
+## Dynamically loaded libraries
+- executable한 프로그램이 실행되는 동안에 로드된다.
+
+# Static binding
+- 객체의 타입이 컴파일러에 의해 **컴파일 되는 시점**에 결정되는 것을 뜻한다.
+- ***binding***이란 메소드에 대한 **호출**과 실제 구현된 메소드의 **코드**가 연결되는 것을 뜻한다.
+- `-static`: static library를 링크한다.
+```cpp
+gcc -static file.c
+```
