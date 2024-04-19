@@ -121,3 +121,12 @@ gcc -DVALUE=2024 example.c
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/54d38d05-0b5d-46fb-b1b1-5e3c4c2c32c0)
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/68230938-bacb-4bd3-8957-f61ea178847d)
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/108fdb81-09de-447d-a8ed-ed631f10a2dc)
+
+# Standard headers and libraries
+- ***표준 헤더파일***은 다음 경로에서 확인 가능하다. `/usr/include`
+- ***표준 라이브러리***는 다음 경로에서 확인 가능하다. `/usr/lib`
+    - `.a`, `.so`? 각각 정적 라이브러리, 동적 라이브러리를 뜻함을 위해서 살펴보았다.
+    - `-print` 옵션을 안 써도 출력은 같지만, 관습적으로 써준다.
+    - `grep`은 키워드를 강조해준다.
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/74b8467a-c6d6-4eeb-b55b-d55aad0a3e4d)
+
