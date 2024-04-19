@@ -134,6 +134,7 @@ gcc -DVALUE=2024 example.c
 - `-l`은 라이브러리의 이름을 지정해주는 역할을 한다.
     - `stdio.h`와 같은 헤더파일은 표준 헤더파일이기 때문에 링크를 위한 옵션을 따로 안 붙여도 된다.
     - 그러나, `math.h`의 경우 **함수의 정의가 라이브러리에 구현되어있기 때문에** 명시적으로 해당 라이브러리를 링크해주어야 한다.
+
 ![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/570cf150-a981-4ec9-b9ec-7e4b78b1ee56)
 
 - `-L`은 라이브러를 검색할 경로를 지정하도록 한다.
@@ -142,6 +143,7 @@ gcc -DVALUE=2024 example.c
     - `-l` 옵션으로 `mym`이라는 이름을 가진 라이브러리를 특정한다.
         - 보통 라이브러리 이름은 `lib`으로 시작하는 게 국룰이기 때문에, lib를 제외한 이름으로 찾는다.
         - `-static` 옵션으로 해당 라이브러리를 정적으로 바인딩한다.
+
 ![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/0aec6346-385d-4011-9d47-d7de0d8247f8)
 
 - 다음과 같이 쓸 수도 있다.
