@@ -29,7 +29,8 @@
 2. 컴파일을 한다. (`-s`)
 3. 어셈블을 한다. -> **Object** files(`.o`)
 3. 링크를 통해 실행파일을 생성한다. -> **Execution** file
-////////////이미지추가
+
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/c2e04076-d216-4f51-93b1-f8c0349ff779)
 
 # C to Machine Code
 ## C compiler: `gcc -S`
@@ -51,3 +52,10 @@
 | `-g` | 생성된 오브젝트 코드에 대한 디버깅 정보를 포함한다. |
 | `-S` | 어셈블리 코드(*.s) 생성을 특정한다. |
 | `-Wall` | 잘못된 코드와 관련된 모든 경고사항을 표시한다. |
+
+<details><summary>Extra options</summary>
+<div markdown="1">
+
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/78ff6e70-4823-4520-8291-4f6779e1da97)
+
+</details>
