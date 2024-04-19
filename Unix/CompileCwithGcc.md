@@ -130,3 +130,7 @@ gcc -DVALUE=2024 example.c
     - `grep`은 키워드를 강조해준다.
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/74b8467a-c6d6-4eeb-b55b-d55aad0a3e4d)
 
+# Add libraries
+- `-L`은 라이브러를 검색할 경로를 지정하도록 한다.
+- `-l`은 라이브러리의 이름을 특정시키는 역할을 한다.
+- 
