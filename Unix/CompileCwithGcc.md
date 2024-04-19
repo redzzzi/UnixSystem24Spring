@@ -162,21 +162,52 @@ gcc -DVALUE=2024 example.c
 | `c` | 아카이브(라이브러리 파일)를 생성한다. |
 | `v` | 파일 크기, 수정 시각등 자세한 내용을 보여준다. |
 | `t` | 아카이브에 있는 파일 리스트를 출력한다. |
+| `q` | 지정된 파일을 라이브러리 끝에 추가한다. |
 ## 예시
+### 라이브러리 파일 생성하기
 1. 임의의 소스파일을 생성한다.
 ```shell
-touch 1.c 2.c
+touch ex1.c ex2.c
 ```
+<details><summary>코드 상세</summary>
+<div markdown="1">
+
+```c
+#include <stdio.h>
+void a(void) {
+        printf("func 1\n");
+}
+```
+```c
+#include <stdio.h>
+void a(void) {
+        printf("func 2\n");
+}
+```
+</details>
+
 2. 오브젝트 파일을 생성한다.
 ```shell
-gcc -c 1.c 2.c
+gcc -c ex1.c ex2.c
 ```
+
 3. `lib.a`의 이름을 가진 라이브러리 파일을 만든다.
    - `v` 옵션은 순전히 선택사항이다.
 ```shell
-ar rcv lib.a 1.c 2.c
+ar rcv liblove.a ex1.c ex2.c
 ```
 4. 해당 라이브러리 파일이 가지고 있는 파일들을 확인한다.
 ```shell
-ar t lib.a
+ar t liblove.a
 ```
+
+### 컴파일타임에 static library 추가하기
+```shell
+touch ex.h ex.c
+```
+```shell
+gcc -L. ex.c -llove
+```
+![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/f513796e-b942-43ba-96e2-33672c8e7cef)
+
+
