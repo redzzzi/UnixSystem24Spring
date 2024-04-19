@@ -28,7 +28,7 @@
 2. 전처리 과정을 거친다. (`.i`)
 2. 컴파일을 한다. (`-s`)
 3. 어셈블을 한다. -> **Object** files(`.o`)
-3. 링크를 한다. -> **Execution** file
+3. 링크를 통해 실행파일을 생성한다. -> **Execution** file
 ////////////이미지추가
 
 # C to Machine Code
@@ -42,3 +42,12 @@
 
 # Compiling Multi-file Programs
 - ***linker***는 다양한 오브젝트 파일과 정적으로 링크된 라이브러리를 결합하여 실행가능하도록 만든다.
+
+# gcc options
+| Options | Description |
+| :---: | :--- |
+| `-c` | linking 없이 소스파일의 컴파일과 어셈블을 실행한다. |
+| `-o` *filename* | *filename*으로 출력물을 위치한다. 기본값은 `a.out`이다. |
+| `-g` | 생성된 오브젝트 코드에 대한 디버깅 정보를 포함한다. |
+| `-S` | 어셈블리 코드(*.s) 생성을 특정한다. |
+| `-Wall` | 잘못된 코드와 관련된 모든 경고사항을 표시한다. |
