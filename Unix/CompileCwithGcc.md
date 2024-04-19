@@ -208,9 +208,27 @@ ar t liblove.a
 ```shell
 touch ex.h ex.c
 ```
-```shell
-gcc -L. ex.c -llove
+<details><summary>코드 상세</summary>
+<div markdown="1">
+
+```c
+// ex.h
+void a(void);
+void b(void);
 ```
-![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/f513796e-b942-43ba-96e2-33672c8e7cef)
+```c
+// ex.c
+#include <stdio.h>
+#include "ex.h"
+int main()
+{
+        a();
+        b();
+        return 0;
+}
+```
+</details>
 
-
+### 오브젝트 순서 바꾸기
+![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/e1a9eae1-43d9-4e68-9a84-8b1b7a5c5565)
+![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/695f807b-f3aa-4747-a156-3d32af026d85)
