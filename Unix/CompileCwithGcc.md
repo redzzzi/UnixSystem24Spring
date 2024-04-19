@@ -90,3 +90,34 @@ gcc -static file.c
 ```
 
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/c633211d-9a91-40cc-9d16-9b70b9b58f05)
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/85eab98e-c886-4eec-8e52-bf134f913922)
+
+# Define the **symbol** from outside
+- 예시
+    - 아래 코드를 통해 2024가 출력된다.
+```c
+// example.c
+#include <stdio.h>
+int main() {
+    printf("%d\n", VALUE);
+    return 0;
+}
+```
+```shell
+gcc -DVALUE=2024 example.c
+```
+
+# Conditional compile
+- `#ifdef DEBUG`
+- `#endif`
+
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/177747ba-60d1-439a-817e-5c5a8a0acc07)
+
+# Standard header file directory
+- 원래 소스코드에서 헤더파일을 쓰고자 한다면, 아래 경고문에서 제시된 것처럼 헤더파일을 `" "`로 묶어줘야 한다.
+- 그러나 `-I` 옵션을 gcc에게 **헤더파일을 찾도록 명령**한다.
+    - `.`은 현재 디렉토리를 뜻한다.
+
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/54d38d05-0b5d-46fb-b1b1-5e3c4c2c32c0)
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/68230938-bacb-4bd3-8957-f61ea178847d)
+![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/108fdb81-09de-447d-a8ed-ed631f10a2dc)
