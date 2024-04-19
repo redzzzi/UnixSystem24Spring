@@ -155,3 +155,10 @@ gcc -DVALUE=2024 example.c
 - *라이브러리 아카이브*를 뜻한다.
 - 객체 모듈을 라이브러리 상태로 유지하고, 필요할 때 사용한다.
 - format: `ar` `[option]` `archive` `[member-file]`
+### ➕ [ar options](https://velog.io/@welloff_jj/libft-Linux-ar-%EB%AA%85%EB%A0%B9%EC%96%B4-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC)
+| Options | Description |
+| :---: | :--- |
+| `r` | 새로운 오브젝트 파일이면 추가, 기존 파일이면 치환한다. |
+| `c` | 아카이브(라이브러리 파일)를 생성한다. |
+| `v` | 파일 크기, 수정 시각등 자세한 내용을 보여준다. |
+| `t` | 아카이브에 있는 파일 리스트를 출력한다. |
