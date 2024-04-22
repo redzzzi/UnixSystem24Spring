@@ -41,3 +41,6 @@ makefile
     - source들 각각을 확인해보아야 한다.
         - `소스가 makefile에서의 target이라면, 재귀적으로 실행한다.`
         - `소스가 존재하지 않는다면, 에러가 난다.`
+
+![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/d4bebbdc-c98f-491d-971a-7a7b3ce9c094)
+
