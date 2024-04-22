@@ -93,3 +93,29 @@ int sum(int a, int b);
 ```
 
 </div></details>
+
+- 위 파일들을 컴파일하고 링크하기 위해서 원래 다음과 같은 `gcc` 명령어를 입력해주어야 한다.
+```shell
+gcc -c sum.c
+gcc -c main.c
+
+gcc -o main sum.o main.o
+```
+```shell
+./main
+```
+- 하지만 매번 저걸 반복하기는 힘들다. 아래는 `makefile`로 컴파일하는 코드이다.
+```shell
+// makefile
+main: main.o sum.o
+    gcc -o main main.o sum.o
+sum.o: sum.c
+    gcc -c sum.c
+main.o: main.c
+    gcc -c main.c
+```
+```shell
+vi makefile
+make
+./main
+```
