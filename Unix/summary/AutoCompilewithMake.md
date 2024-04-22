@@ -57,20 +57,13 @@ target: dependencies
     - *recipe*이라고도 한다.
 
 # Practice1: automatic compile
-<<<<<<< HEAD
 - `main.c`, `sum.c`, `sum.h`의 소스코드를 가지고 자동으로 컴파일하도록 하는 makefile을 만든다.
-=======
-- `main.c`, `sum.c`, `sum.h`의 소스코드를 가지고 자동으로 컴파일하도록 하는 makefile을 만든다ㅣ
->>>>>>> 833498bcba73934e0dd7408b50a1eb5ae25647c1
 
 <details><summary>코드 상세</summary>
 <div markdown="1">
 
 ```main.c
-<<<<<<< HEAD
 // main.c
-=======
->>>>>>> 833498bcba73934e0dd7408b50a1eb5ae25647c1
 #include <stdio.h>
 #include <stdlib.h>
 #include "sum.h"
@@ -83,16 +76,12 @@ int main(int argc, char *argv[]) {
 }
 ```
 ```sum.c
-<<<<<<< HEAD
 // sum.c
-=======
->>>>>>> 833498bcba73934e0dd7408b50a1eb5ae25647c1
 int sum(int a, int b) {}
     int c;
     c = a + b;
     return c;
 ```
-<<<<<<< HEAD
 ```
 // sum.h
 =======
@@ -105,7 +94,4 @@ int sum(int a, int b);
 
 #endif
 ```
-<<<<<<< HEAD
 </div></details>
-=======
->>>>>>> 833498bcba73934e0dd7408b50a1eb5ae25647c1
