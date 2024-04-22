@@ -44,3 +44,47 @@ makefile
 
 ![image](https://github.com/redzzzi/UnixSystem24spring/assets/127263392/d4bebbdc-c98f-491d-971a-7a7b3ce9c094)
 
+# Rules of `makefile`
+```shell
+target: dependencies
+    command1
+    command2
+```
+- ***target***: 보통 프로그램에 의해 생성된 파일의 이름이다.
+- ***dependency***: target을 생성하기 위한 **입력**으로써 사용되는 파일이다.
+    - *prerequisite*이라고도 한다. 
+- ***system command(s)***: `make`를 수행할 수 있도록 해주는 동작을 의미한다.
+    - *recipe*이라고도 한다.
+
+# Practice1: automatic compile
+- `main.c`, `sum.c`, `sum.h`의 소스코드를 가지고 자동으로 컴파일하도록 하는 makefile을 만든다ㅣ
+
+<details><summary>코드 상세</summary>
+<div markdown="1">
+
+```main.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "sum.h"
+
+int main(int argc, char *argv[]) {
+    int c;
+    c = sum(1, 2);
+    printf("The sum of 1 and 2 is %d\n", c);
+    exit(0);
+}
+```
+```sum.c
+int sum(int a, int b) {}
+    int c;
+    c = a + b;
+    return c;
+```
+```sum.h
+#ifndef _SUM_H_
+#define _SUM_H_
+
+int sum(int a, int b);
+
+#endif
+```
