@@ -15,19 +15,29 @@
     4. Having a `Makefile`
 ## Real Build Process
 - 대형 프로젝트인 경우에 다음 특징을 띤다.
-    1. `gcc`가 
-/
-/
-/
-/
-/
-/
-/
-/
-/
-/
-/
-/
-/
-/
-pr2부터 예제 따라하기
+    1. `gcc`는 우리가 원래 해오던 방식대로 preprocess, compile, link를 해주지 않는다.
+    2. 소스파일이 여러 개라면 그만큼 여러 번의 타이핑을 해야할 것이다.
+    3. 소스코드를 배포할 때 빌드하는 로직을 문서화 하고 싶지는 않을 것이다. -> 귀찮자너
+    4. 그리고 수정할 때마다 다시 컴파일을 해줘야 하는데, 이것 또한 매우 귀찮은 일이다.
+    - 스크립트의 경우 1~3번을 해결해줄 수 있다.
+
+# Recompilation Management
+- 불필요한 컴파일을 하지 않는 이론을 ***dependency dag***라고 한다. 
+    - **D**irected, **A**cyclic **G**raph
+- target *t*를 생성하고자 할 때, **소스**들과 그것들을 직접 또는 간접적으로 사용하는 **명령어**가 필요하다.
+
+# make 명령어 사용해보기
+- format
+```shell
+make -f <makefileName> target
+```
+```shell
+makefile
+```
+- Default input file
+    - *target*을 지정해주지 않으면, 파일에서 첫번째 것을 *target*으로 인식한다.
+    pr2부터 예제 따라하기
+- Target execution
+    - source들 각각을 확인해보아야 한다.
+        - `소스가 makefile에서의 target이라면, 재귀적으로 실행한다.`
+        - `소스가 존재하지 않는다면, 에러가 난다.`
