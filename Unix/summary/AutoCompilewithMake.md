@@ -56,6 +56,32 @@ target: dependencies
 - ***system command(s)***: `make`를 수행할 수 있도록 해주는 동작을 의미한다.
     - *recipe*이라고도 한다.
 
+# make **Variables(=macros)**
+- makefile에서 값들의 특징은 **type**이 없이 없이, `모두 문자열이다.`
+- 변수명은 매우 중요하며 아래 기호를 포함하지 못한다.
+    - `:`, `#`, `=`, or `공백`
+- 예시: 오브젝트 파일명을 특정할 수 있는 makefile 코드이다.
+```c
+CC = gcc
+CFLAGS = -Wall -std=c11
+foo.o: foo.c foo.h
+    $(CC) $(CFLAGS) -o foo.o -c foo.c
+```
+
+- 변수를 가지고 파일명 목록들을 담을 수 있는 것도 자주 쓰인다.
+- `clean`은 ***관습적***인 것이다.
+    - 해당 코드부터 시작하기 위해서 이전에 생성된 파일을 지운다.
+
+## Special variables
+| Symbol | Description |
+| :---: | :--- |
+| `$@` | ***target***을 나타내는 **파일명**이다. |
+| `$%` | 아카이브 파일의 멤버를 지정할 때 사용된다. |
+| `$<` | 의존 파일 목록 중 첫 번째 것을 말한다. |
+| `$^` | 제시된 모든 의존 파일들을 뜻한다. |
+| `$?` | target 파일보다 최신인 의존 파일을 뜻한다. |
+
+
 # Practice1: automatic compile
 - `main.c`, `sum.c`, `sum.h`의 소스코드를 가지고 자동으로 컴파일하도록 하는 makefile을 만든다.
 
@@ -119,3 +145,4 @@ vi makefile
 make
 ./main
 ```
+
