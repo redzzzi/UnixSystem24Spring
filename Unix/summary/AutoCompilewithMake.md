@@ -82,11 +82,8 @@ int sum(int a, int b) {}
     c = a + b;
     return c;
 ```
-```
+```c
 // sum.h
-=======
-```sum.h
->>>>>>> 833498bcba73934e0dd7408b50a1eb5ae25647c1
 #ifndef _SUM_H_
 #define _SUM_H_
 
@@ -94,4 +91,5 @@ int sum(int a, int b);
 
 #endif
 ```
+
 </div></details>
