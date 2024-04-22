@@ -81,6 +81,23 @@ foo.o: foo.c foo.h
 | `$^` | 제시된 모든 의존 파일들을 뜻한다. |
 | `$?` | target 파일보다 최신인 의존 파일을 뜻한다. |
 
+# Using **phony targets**
+- command script를 표현하는 라벨 느김이라고 생각하면 된다.
+- 파일을 나타내지 않는 target을 ***phony target***이라고 한다.
+- Example
+    - `all`: makefile에서 기본적인 target이다.
+    - `clean`: 원치 않는 일시적인 파일을 삭제한다.
+```c
+CFLAGS = -Wall -g
+OBJS = sum.o main.o
+all: main
+%.o: %.c
+    gcc -c -o $@ $(CFLAGS) $<
+main: $(OBJS)
+    gcc -o main $(OBJS)
+clean:
+    rm main $(OBJS)
+```
 
 # Practice1: automatic compile
 - `main.c`, `sum.c`, `sum.h`의 소스코드를 가지고 자동으로 컴파일하도록 하는 makefile을 만든다.
