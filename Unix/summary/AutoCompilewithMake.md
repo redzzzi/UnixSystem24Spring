@@ -30,6 +30,7 @@ int sum(int a, int b);
 
 #endif
 ```
+</div></details>
 
 # make
 - 다른 파일과 **종속관계인 파일을 빌딩할 때, 그 절차를 자동화**시켜주는 명령어이다.
