@@ -125,9 +125,9 @@ gcc -DVALUE=2024 example.c
 # Standard headers and libraries
 - ***표준 헤더파일***은 다음 경로에서 확인 가능하다. `/usr/include`
 - ***표준 라이브러리***는 다음 경로에서 확인 가능하다. `/usr/lib`
-    - `.a`, `.so`? 각각 정적 라이브러리, 동적 라이브러리를 뜻함을 위해서 살펴보았다.
-    - `-print` 옵션을 안 써도 출력은 같지만, 관습적으로 써준다.
-    - `grep`은 키워드를 강조해준다.
+    - `.a`, `.so`는 각각 정적 라이브러리, 동적 라이브러리를 뜻한다.
+- `-print` 옵션을 안 써도 출력은 같지만, 관습적으로 써준다.
+- `grep`은 키워드를 강조해준다.
 ![image](https://github.com/redzzzi/UnixSystem24Spring/assets/127263392/74b8467a-c6d6-4eeb-b55b-d55aad0a3e4d)
 
 # Add libraries<sup>math 헤더파일을 활용한 예시</sup>
