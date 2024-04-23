@@ -1,4 +1,4 @@
-<details><summary>`makefile` 실습용 예제 코드 상세</summary>
+<details><summary><code>makefile</code> 실습용 예제 코드 상세</summary>
 <div markdown="1">
 
 ```main.c
