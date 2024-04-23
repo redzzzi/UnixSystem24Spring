@@ -1,3 +1,36 @@
+<details><summary>`makefile` 실습용 예제 코드 상세</summary>
+<div markdown="1">
+
+```main.c
+// main.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "sum.h"
+
+int main(int argc, char *argv[]) {
+    int c;
+    c = sum(1, 2);
+    printf("The sum of 1 and 2 is %d\n", c);
+    exit(0);
+}
+```
+```sum.c
+// sum.c
+int sum(int a, int b) {}
+    int c;
+    c = a + b;
+    return c;
+```
+```c
+// sum.h
+#ifndef _SUM_H_
+#define _SUM_H_
+
+int sum(int a, int b);
+
+#endif
+```
+
 # make
 - 다른 파일과 **종속관계인 파일을 빌딩할 때, 그 절차를 자동화**시켜주는 명령어이다.
 - 다양한 업무에 사용이 된다.
@@ -82,7 +115,8 @@ foo.o: foo.c foo.h
 | `$?` | target 파일보다 최신인 의존 파일을 뜻한다. |
 
 # Using **phony targets**
-- command script를 표현하는 라벨 느김이라고 생각하면 된다.
+- *phony*: 가짜의
+- command script를 표현하는 라벨 느낌이라고 생각하면 된다.
 - 파일을 나타내지 않는 target을 ***phony target***이라고 한다.
 - Example
     - `all`: makefile에서 기본적인 target이다.
@@ -163,3 +197,49 @@ make
 ./main
 ```
 
+# Practice2: macro
+- 위에서는 파일명을 하나씩 다 입력하여 코드를 짰다.
+- 하지만 변수를 만들어 **매크로**로 사용이 가능하다.
+```c
+// makefile
+OBJS = sum.o main.o
+all: main
+sum.o: sum.c
+    gcc -c sum.c
+main.o: main.c
+    gcc -c main.c
+main: $(OBJS)
+    gcc -o main $(OBJS)
+```
+
+# Practice3: suffix rule
+- special variable과 phony target을 이용하여 코드를 짤 수 있다.
+- `.o` 파일 전체를 wildcard인 `%`를 포함하여 표현할 수 있다.
+```c
+CFLAGS = -Wall -g
+OBJS = sum.o main.o
+all: main
+%.o: %.c
+    gcc -c -o $@ $(CFLAGS) $<
+main: $(OBJS)
+    gcc -o main $(OBJS)
+clear:
+    rm main $(OBJS)
+```
+
+# Practice4
+- 라이브러리 파일을 변수 매크로로 정의한다.
+```c
+CC = gcc
+CFLAGS = -Wall -g -c
+INCLUDE = -I.
+LIBS = -L. -lm
+OBJS = sum.o main.o
+all: main
+%.o: %.c
+    $$(CC) $(INCLUDE) $(CFLAGS) $<
+main: $(OBJS)
+    $(CC) -o main $(OBJS) $(LIBS)
+clean:
+    rm -f main $(OBJS)
+```
