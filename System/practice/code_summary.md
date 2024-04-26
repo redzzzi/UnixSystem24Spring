@@ -33,3 +33,21 @@ sumstore:
     popq  %rbx
     ret
 ```
+
+## 2. swap()
+```c
+void swap(long *xp, long *yp) {
+    long t0 = *xp;
+    long t1 = *yp;
+    *xp = t1;
+    *yp = t0;
+}
+```
+```c
+swap:
+    movq (%rdi), %rax
+    movq (%rsi), %rdx
+    movq %rdx, (%rdi)
+    movq %rax, (%rsi)
+    ret
+```
