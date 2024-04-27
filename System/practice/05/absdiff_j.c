@@ -8,11 +8,14 @@ long absdiff_j(long x, long y) {
   goto Done;
 Else:
   result = y - x;
+  printf("Else) the result: %ld\n", result);
 Done:
+  printf("Done1) the result: %ld\n", result);
   return result;
+  printf("Done2) the result: %ld\n", result);
 }
 
 int main() {
-  printf("the result: %ld\n", absdiff_j(5, 10));
+  printf("main) the result: %ld\n", absdiff_j(5, 10));
   return 0;
 }
