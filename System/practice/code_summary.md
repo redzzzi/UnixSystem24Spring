@@ -142,3 +142,38 @@ absdiff:
     cmovle %rdx, %rax
     ret
 ```
+
+## "Do-While" Loop: Count number of 1's in arg x ("popcount")
+```c
+// do-while
+long pcount_do (unsigned long x) {
+    long result = 0;
+    do {
+        result += x & 0x1;
+        x >>= 1;
+    } while (x);
+    return result;
+}
+```
+```c
+// goto
+long pcount_goto (unsigned long x) {
+    long result = 0;
+    loop:
+        result += x & 0x1;
+        x >>= 1;
+    if (x) goto loop;
+    return result;
+}
+```
+### ⭐⭐ 헷갈리는 거 조심!!
+```c
+    movl  $0, %eax
+.L2:
+    movq  %rdi, %rdx
+    andl  $1, %edx
+    addq  %rdx, %rax
+    shrq  %rdi
+    jne   .L2
+    rep; ret
+```
