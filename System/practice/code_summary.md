@@ -106,7 +106,7 @@ movzblq %al, %eax
 | 0xFFFF FFFF FFFF FF01 | 1 | 1 | 0 | 0 |
 | 0x0000 0000 0000 0001 | 1 | 0 | 0 | 0 |
 
-## absdiff
+## Conditional Branch: absdiff
 ```c
 long absdiff(long x, long y) {
     long result;
@@ -128,5 +128,17 @@ absdiff:
 .L4:
     movq %rsi, %rax
     subq %rdi, %rax
+    ret
+```
+## Conditional Move: absdiff
+```c
+// gcc -O2 -S <파일명>
+absdiff:
+    movq   %rdi, %rax // x
+    subq   %rsi, %rax // x - y
+    movq   %rsi, %rdx
+    subq   %rdi, %rdx // y - x
+    cmpq   %rsi, %rdi
+    cmovle %rdx, %rax
     ret
 ```
