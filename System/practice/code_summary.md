@@ -177,3 +177,26 @@ long pcount_goto (unsigned long x) {
     jne   .L2
     rep; ret
 ```
+
+## While Loop
+```c
+long pcount_while (unsigned long x) {
+    long result = 0;
+    while (x) {
+        result += x & 0x1;
+        x >>= 1;
+    }
+    return result;
+}
+```
+```c
+long pcount_goto_jtm (unsigned long x) {
+    goto test;
+   loop:
+    result += x & 0x1;
+    x >>= 1;
+   test:
+    if (x) goto loop;
+    return result;
+}
+```
