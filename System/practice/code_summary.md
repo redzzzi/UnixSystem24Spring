@@ -88,3 +88,20 @@ setg   %al
 movzbl %al, %eax
 ret
 ```
+
+## Exercise
+```c
+xorq   %rax, %rax
+subq   $1, %rax
+cmpq   $2, %rax
+setl   %al
+movzblq %al, %eax
+```
+
+| `%rax` | `SF` | `CF` | `OF` | `ZF` |
+| :--- | :---: | :---: | :---: | :---: |
+| 0x0000 0000 0000 0000 | 0 | 0 | 0 | 1 |
+| 0xFFFF FFFF FFFF FFFF | 1 | 1 | 0 | 0 |
+| 0xFFFF FFFF FFFF FFFF | 1 | 0 | 0 | 0 |
+| 0xFFFF FFFF FFFF FF01 | 1 | 1 | 0 | 0 |
+| 0x0000 0000 0000 0001 | 1 | 0 | 0 | 0 |
