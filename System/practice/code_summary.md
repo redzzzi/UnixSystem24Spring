@@ -74,3 +74,17 @@ arith:
     imulq %rcx, %rax
     ret
 ```
+
+# 05 machine control
+## greater than
+```c
+int gt(long x, long y) {
+    return x > y;
+}
+```
+```c
+cmpq   %rsi, %rdi
+setg   %al
+movzbl %al, %eax
+ret
+```
