@@ -105,3 +105,27 @@ movzblq %al, %eax
 | 0xFFFF FFFF FFFF FFFF | 1 | 0 | 0 | 0 |
 | 0xFFFF FFFF FFFF FF01 | 1 | 1 | 0 | 0 |
 | 0x0000 0000 0000 0001 | 1 | 0 | 0 | 0 |
+
+## absdiff
+```c
+long absdiff(long x, long y) {
+    long result;
+    if (x > y)
+        result = x - y;
+    else
+        result = y - x;
+    return result;
+}
+```
+```c
+absdiff:
+    cmpq %rsi, %rdi
+    jle  .L4
+    movq %rdi, %rax
+    subq %rsi, %rax
+    ret
+.L4:
+    movq %rsi, %rax
+    subq %rdi, %rax
+    ret
+```
