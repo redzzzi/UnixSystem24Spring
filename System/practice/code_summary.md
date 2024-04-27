@@ -118,6 +118,7 @@ long absdiff(long x, long y) {
 }
 ```
 ```c
+// gcc -Og -S -fno-if-conversion absdiff.c
 absdiff:
     cmpq %rsi, %rdi
     jle  .L4
