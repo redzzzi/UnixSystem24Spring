@@ -11,13 +11,12 @@ void show_bytes(pointer start, size_t len) {
 
 int main() {
   int a = 15213;
-  printf("int a = 15213;\n");
+  printf("a = 15213\n");
   show_bytes((pointer) &a, sizeof(int)); // show_bytes Execution Example
 
   int b = -15213; // Representing Pointers
-  int *P = &b;
-  printf("int b = -15213;\n");
-  show_bytes((pointer) P, sizeof(int));
+  printf("b = -15213\n");
+  show_bytes((pointer) &b, sizeof(int));
 
   return 0;
 }
