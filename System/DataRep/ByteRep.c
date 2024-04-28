@@ -16,6 +16,7 @@ int main() {
 
   int b = -15213; // Representing Pointers
   int *P = &b;
+  printf("int b = -15213;\n");
   show_bytes((pointer) P, sizeof(int));
 
   return 0;
