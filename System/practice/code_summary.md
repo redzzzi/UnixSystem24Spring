@@ -189,6 +189,7 @@ long pcount_while (unsigned long x) {
     return result;
 }
 ```
+### Jump-to-middle translation
 ```c
 long pcount_goto_jtm (unsigned long x) {
     goto test;
@@ -199,4 +200,130 @@ long pcount_goto_jtm (unsigned long x) {
     if (x) goto loop;
     return result;
 }
+```
+
+## While Loop 2
+### Do-while conversion
+```c
+long pcount_goto_dw (unsigned long x) {
+    long result = 0;
+    if (!x) goto done;
+   loop:
+    result += x & 0x1;
+    x >>= 1;
+    if (x) goto loop;
+   done:
+    return result;
+}
+```
+
+# For Loop Form
+```c
+#define WSIZE 8*sizeof(int)
+long pcount_for (unsigned long x) {
+    size_t i;
+    long result = 0;
+    for (i = 0; i < WSIZE; i++) {
+        unsigned bit = (x >> i) & 0x1;
+        result += bit;
+    }
+    return result;
+}
+```
+## For-While Conversion
+```c
+#define WSIZE 8*sizeof(int)
+long pcount_for_while (unsigned long x) {
+    size_t i;
+    long result = 0;
+    i = 0;
+    while (i < WSIZE) {
+        unsigned bit = (x >> i) & 0x1;
+        result += bit;
+        i++;
+    }
+    return result;
+}
+```
+## For Loop -> Do-While Conversion
+```c
+#define WSIZE 8*sizeof(int)
+long pcount_for_goto_dw (unsigned long x) {
+    size_t i;
+    long result = 0;
+   loop:
+    unsigned bit = (x >> i) & 0x1;
+    result += bit;
+    if (x) goto loop;
+   i++;
+   if (i < WSIZE) goto loop;
+   done:
+    return result;
+}
+```
+
+# Switch Statement
+```c
+long switch_eg (long x, long y, long z) {
+    long w = 1;
+    switch (x) {
+    case 1:
+        w = y * z;
+        break
+    case 2:
+        w = y / z;
+    case 3:
+        w += z;
+        break;
+    case 5:
+    case 6:
+        w -= z;
+        break;
+    default:
+        w = 2;
+    }
+    return w;
+}
+```
+```c
+// %rdi | x
+// %rsi | y
+// %rdx | z
+// %rax | return value
+swich_eg: // note that w IS NOT INITIALIZED HERE
+    movq   %rdx, %rcx
+    cmpq   $6, %rdi
+    ja     .L8
+    jmp    *.L4(, %rdi, 8)
+.section   .rodata
+    .align 8
+.L4:
+    .quad  .L8 // x = 0
+    .quad  .L3 // x = 1
+    .quad  .L5 // x = 2
+    .quad  .L9 // x = 3
+    .quad  .L8 // x = 4
+    .quad  .L7 // x = 5
+    .quad  .L7 // x = 6
+.L3: // case 1
+    movq   %rsi, %rax
+    imulq  %rdx, %rax
+    ret
+.L5: // case 2
+    movq   %rsi, %rax
+    cqto
+    idivq  %rcx
+    jmp    .L6 // goto merge
+.L9 // case 3
+    movl   $1, %eax
+.L6:
+    addq   %rcx, %rax
+    ret
+.L7:
+    movl   $1, %eax
+    subq   %rdx, %rax
+    ret
+.L8:
+    movl   $2, %eax
+    ret
 ```
