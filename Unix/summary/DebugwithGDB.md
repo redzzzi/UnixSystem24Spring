@@ -36,3 +36,19 @@ $ gdb program
 $ gdb program core
 $ gdb program 1234
 ```
+
+# GDB commands
+| `option` | command | Description |
+| :---: | :---: | :--- |
+| `b` | break | 현재 명령줄에 breakpoint를 건다. |
+| `c` | continue | 다음 breakpoint 또는 에러가 나타날 때까지 프로그램을 계속 실행한다. |
+| `d` | delete | 설정해두었던 breakpoint를 삭제한다. |
+| `f` | frame | 스택 프레임을 보여준다. |
+| `h` | help | helps를 보여준다. |
+| `i` | info | 몇몇 정보를 제공한다. |
+| `l` | list | 소스코드를 나열한다. |
+| `n` | next | `s`와 비슷하지만, 함수에게까지는 step을 하지 않는다. |
+| `p` | print | 변수에 있는 현재 값을 출력한다. |
+| `q` | quit | gdb를 종료한다. |
+| `r` | run | breakpoint 또는 에러나 나타날 때까지 프로그램을 실행한다. |
+| `s` | step | 프로그램의 다음 명령줄을 실행한다. |
