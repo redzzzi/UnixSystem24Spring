@@ -63,7 +63,7 @@ int main(int argc, char *argv[]) {
     fp1 = fopen(argv[1], "r"); // read mode
     if (fp1 == NULL) {
         printf("Error: Cannot open the file %s\n", argv[1]);
-        exit(1);
+        exit(1); // stdlib.h 필요
     }
     fp2 = fopen(argv[2], "w"); // read ASCII code from the keyboard
     while ((c=fgetc(fp1)) != EOF) {
