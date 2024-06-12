@@ -47,3 +47,6 @@ int main(int argc, char *argv[]) {
     printf("A write operation to %s is completed.\n", argv[1]);
 }
 ```
+<p align="center">
+    <img src="https://github.com/redzzzi/UnixSystem24spring/assets/127263392/f05cc7e5-14c5-4775-a26b-7821b8f9ad74" width="500" />
+</p>
