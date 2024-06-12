@@ -75,6 +75,22 @@ int main(int argc, char *argv[]) {
 }
 ```
 
+# Line-based I/O functions
+- Reading entire lines of data from a file/stdin
+```c
+#include <stdio.h>
+
+char *fgets(char *buf, int n, FILE *fp);
+char *gets(char *buf);
+```
+- Writing entire lines of data to a file/stdout
+```c
+#include <stdio.h>
+
+int fputs(const char *str, FILE *fp);
+int puts(const char *str);
+```
+
 # Example4: Line I/O
 ```c
 #include <stdio.h>
@@ -98,6 +114,20 @@ int main(int argc, char *argv[]) {
     }
     fclose(fp);
 }
+```
+
+# Formatted I/O functions
+- Reading formatted data from a file
+```c
+#include <stdio.h>
+
+int fscanf(FILE *stream, const char *format, ...)
+```
+- Writing a formatted string to a file
+```c
+#include <stdio.h>
+
+int fprintf(FILE *stream, const char *format, ...)
 ```
 
 Example: `fprint.c`
