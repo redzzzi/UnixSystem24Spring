@@ -52,7 +52,7 @@ $ gcc -o swap main.o swap.o
 | `q` | quit | gdb를 종료한다. |
 | `r` | run | breakpoint 또는 error 전까지 프로그램을 실행한다. (처음부터 시작)|
 | `s` | step | 현재 줄 코드를 한 단계 실행한다. 현재 줄이 함수 호출을 포함한 경우, 함수 내부로 들어가 첫 번째 줄을 실행한다. |
-| `bt` | backtrace 1 | 함수가 어떤 순서로 호출되었는지 보여준다. |
+| `bt` | backtrace | 함수가 어떤 순서로 호출되었는지 보여준다. |
 | `up` | up | 프레임을 위로 이동시킨다. |
 
 ## Resuming Execution
